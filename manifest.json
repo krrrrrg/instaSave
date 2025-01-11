@@ -5,15 +5,13 @@
   "description": "인스타그램 미디어 다운로더",
   "permissions": [
     "downloads",
-    "activeTab",
-    "storage",
-    "scripting",
-    "webRequest"
+    "activeTab"
   ],
   "host_permissions": [
-    "https://*.instagram.com/*",
-    "https://*.cdninstagram.com/*",
-    "https://*.fbcdn.net/*"
+    "*://*.cdninstagram.com/*",
+    "*://*.instagram.com/*",
+    "*://*.fbcdn.net/*",
+    "*://*.facebook.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -31,5 +29,9 @@
   ],
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "web_accessible_resources": [{
+    "resources": ["icons/*"],
+    "matches": ["https://*.instagram.com/*"]
+  }]
 } 
